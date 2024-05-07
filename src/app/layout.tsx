@@ -1,10 +1,10 @@
-import ThemeProvider from '@/providers/ThemeProvider';
 import type { Metadata } from 'next';
 import { Montagu_Slab } from 'next/font/google';
 import '@/app/globals.css';
 import { PropsWithChildren } from 'react';
+import ThemeProvider from '@/providers/ThemeProvider';
 
-const mainFont = Montagu_Slab({ subsets: ['latin'] });
+const mainFont = Montagu_Slab({ subsets: ['latin'], display: 'swap' });
 
 export default function RootLayout(props: PropsWithChildren) {
   return (

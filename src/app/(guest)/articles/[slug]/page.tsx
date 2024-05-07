@@ -1,8 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import {
-  GetAllSlugs,
-  GetAllSlugsResult,
   GetArticleFromSlug,
   GetArticleFromSlugResult,
   GetTitleFromSlug,
@@ -71,12 +69,4 @@ export async function generateMetadata({ params }: Props) {
     params: { slug: params.slug },
   });
   return { title };
-}
-
-export async function getStaticPaths() {
-  const paths = await sanityFetch<GetAllSlugsResult>({ query: GetAllSlugs });
-  return {
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
-  };
 }

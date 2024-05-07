@@ -1,11 +1,6 @@
 import groq from 'groq';
 import type * as Schema from '@/sanity/schema';
 
-export const GetAllSlugs = groq`
-  *[_type == "post" && defined(slug.current)][].slug.current
-`;
-export type GetAllSlugsResult = string[];
-
 export const GetTitleFromSlug = groq`
   *[_type == "post" && slug.current == $slug][0].title
 `;
